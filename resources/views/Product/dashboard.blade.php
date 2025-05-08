@@ -151,11 +151,28 @@
             <div class="bg-white rounded-2xl shadow p-5">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-3">
-                        <div class="text-lg font-semibold text-gray-700">Payment Summary</div>
-                        <div class="bg-gray-100 p-1 rounded-full flex">
-                        <button class="text-sm px-4 py-1 bg-white rounded-full shadow-sm text-purple-800">Upcoming</button>
+                    <div class="ol-span-2 max-w-96">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="text-lg font-semibold">Payment Summary</h4>
+                    <div class="bg-gray-100 p-1 rounded-full flex">
+                        <button class="text-sm px-2 py-1 bg-white rounded-full shadow-sm text-purple-">Upcoming</button>
                         <button class="text-sm px-3 py-1 text-gray-500">Paid</button>
                     </div>
+                </div>
+
+                <div class="flex justify-between items-end h-96 mb-2">
+                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
+                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
+                    <div class="w-[20%] bg-purple-800 h-[60%] rounded-t-md"></div>
+                </div>
+
+                <div class="flex justify-between text-sm text-gray-500 mt-1">
+                    <span>1-30 days</span>
+                    <span>31-60 days</span>
+                    <span>61-90 days</span>
+                </div>
+                <h4 class="text-sm py-4 px-4 text-center">Upcoming</h4>
+            </div>
                     </div>
                 </div>
             </div>
@@ -204,6 +221,7 @@
                             <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Delivered</span>
                         </div>
                     </div>
+                    
                 </div>
                 
                 <div class="mt-10"></div>
@@ -227,7 +245,7 @@
 
                 <div class="flex justify-between text-sm text-gray-500 mt-1">
                     <span>1-30 days</span>
-                    <span>31-60 days</span>
+                    <span>31-60 days</span>git 
                     <span>61-90 days</span>
                 </div>
                 <h4 class="text-sm py-4 px-4 text-center">Upcoming</h4>
