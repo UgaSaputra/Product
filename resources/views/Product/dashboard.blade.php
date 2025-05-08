@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Product</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="bg-gray-50 absolute inset-0">
-    <!-- Navigation -->
     <nav class="flex items-center justify-between px-6 py-4 bg-white shadow-sm">
         <div class="flex items-center space-x-2">
             <img src="{{ asset('img/logo.png')}}" class="h-8 w-8 text-teal-500" viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
     <!-- Main Content saya -->
     <div class="py-5 px-14 font-serif text-sm">
         <button
-            class="mb-4 text-gray-500 hover:text-blue-600 hover:underline hover:scale-105 transform transition duration-200">
+            class="mb-4 text-gray-500 hover:text-blue-600 hover:underline hover:scale-105 transform transition duration-300">
             Home/Seller Portal
         </button>
 
@@ -114,78 +114,67 @@
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <div class="bg-white p-6 rounded-2hadow">
-                <h4 class="text-lg font-semibold mb-4">Order Summary</h4>
+                            <h4 class="text-lg font-semibold mb-4">Order Summary</h4>
 
-                <!-- Pending Orders saya -->
-                <div class="mb-4">
-                    <p class="text-sm mb-1 w-96">Pending Orders</p><span class="text-xl">40%</span>
-                    <p class="text-xs text-gray-500 mt-1 text-right">160/400 Orders</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 40%"></div>
-                    </div>
-                </div>
+                            <!-- Pending Orders saya -->
+                            <div class="mb-4">
+                                <p class="text-sm mb-1 w-96">Pending Orders</p><span class="text-xl">40%</span>
+                                <p class="text-xs text-gray-500 mt-1 text-right">160/400 Orders</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-yellow-400 h-2.5 rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
 
-                <!-- Shipped Orders saya -->
-                <div class="mb-4 py-10">
-                    <p class="text-sm mb-1">Shipped Orders</p><span class="text-xl">30%</span>
-                    <p class="text-xs text-gray-500 mt-1 text-right">120/400 Orders</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-purple-700 h-2.5 rounded-full" style="width: 30%"></div>
-                    </div>
-                </div>
+                            <!-- Shipped Orders saya -->
+                            <div class="mb-4 py-10">
+                                <p class="text-sm mb-1">Shipped Orders</p><span class="text-xl">30%</span>
+                                <p class="text-xs text-gray-500 mt-1 text-right">120/400 Orders</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-purple-700 h-2.5 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
 
-                <!-- Delivered Orders saya -->
-                <div>
-                    <p class="text-sm mb-1">Delivered Orders</p><span class="text-xl text-black">30%</span>
-                    <p class="text-xs text-gray-500 mt-1 text-right">120/400 Orders</p>
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div class="bg-green-500 h-2.5 rounded-full" style="width: 30%"></div>
-                    </div>
-                </div>
-            </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Total Sell saya-->
-            <div class="bg-white rounded-2xl shadow p-5">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center space-x-3">
-                    <div class="ol-span-2 max-w-96">
-                <div class="flex justify-between items-center mb-2">
-                    <h4 class="text-lg font-semibold">Payment Summary</h4>
-                    <div class="bg-gray-100 p-1 rounded-full flex">
-                        <button class="text-sm px-2 py-1 bg-white rounded-full shadow-sm text-purple-">Upcoming</button>
-                        <button class="text-sm px-3 py-1 text-gray-500">Paid</button>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-end h-96 mb-2">
-                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
-                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
-                    <div class="w-[20%] bg-purple-800 h-[60%] rounded-t-md"></div>
-                </div>
-
-                <div class="flex justify-between text-sm text-gray-500 mt-1">
-                    <span>1-30 days</span>
-                    <span>31-60 days</span>
-                    <span>61-90 days</span>
-                </div>
-                <h4 class="text-sm py-4 px-4 text-center">Upcoming</h4>
-            </div>
+                            <!-- Delivered Orders saya -->
+                            <div>
+                                <p class="text-sm mb-1">Delivered Orders</p><span class="text-xl text-black">30%</span>
+                                <p class="text-xs text-gray-500 mt-1 text-right">120/400 Orders</p>
+                                <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                    <div class="bg-green-500 h-2.5 rounded-full" style="width: 30%"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Total Product saya -->
+            <!-- Total Payment saya-->
+            <div class="bg-white rounded-2xl shadow-lg p-6 max-w-xl mx-auto mt-4">
+                <div class="flex items-center justify-between mb-4">
+                    <h4 class="text-sm font-semibold">Payment Summary</h4>
+                    <div class="flex space-x-2">
+                        <button id="btnUpcoming"
+                            class="text-sm px-3 py-1 bg-purple-600 text-white rounded-full shadow">Upcoming</button>
+                        <button id="btnPaid"
+                            class="text-sm px-3 py-1 text-gray-600 rounded-full hover:bg-gray-200">Paid</button>
+                    </div>
+                </div>
+                <div class="w-[360px] h-[400px] py-10">
+                    <canvas id="paymentChart" class="h-[400px] px-"></canvas>
+                </div>
+                <h4 class="text-lg text-center py-4 text-gray-700">Upcoming</h4>
+            </div>
+
+
+
+            <!-- Total Order saya -->
             <div class="bg-white rounded-2xl shadow p-4">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center space-x-3">
                         <div class="text-lg font-semibold text-gray-700">Riview Orders</div>
                     </div>
                     <div class="text-gray-400 text-xl cursor-pointer">⋮</div>
-                  </div>
-                    <div class="space-y-4">
+                </div>
+                <div class="space-y-4">
                     <div class="flex justify-between items-center text-sm py-5">
                         <div>
                             <p class="font-medium">01/04/2024 <span class="text-xs text-gray-400 block">P12345</span>
@@ -221,40 +210,62 @@
                             <span class="text-xs bg-green-100 text-green-600 px-2 py-1 rounded-full">Delivered</span>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="mt-10"></div>
             </div>
-        <!-- </div>
-            <div class="bg-white p-3 rounded-2xl shadow col-span-2 max-w-96 flex-row-reverse ml-32">
-                <div class="flex justify-between items-center mb-2">
-                    <h4 class="text-lg font-semibold">Payment Summary</h4>
-                    <div class="bg-gray-100 p-1 rounded-full flex">
-                        <button
-                            class="text-sm px-2 py-1 bg-white rounded-full shadow-sm text-purple-800">Upcoming</button>
-                        <button class="text-sm px-3 py-1 text-gray-500">Paid</button>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-end h-96 mb-2">
-                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
-                    <div class="w-[20%] bg-purple-800 h-[90%] rounded-t-md"></div>
-                    <div class="w-[20%] bg-purple-800 h-[60%] rounded-t-md"></div>
-                </div>
-
-                <div class="flex justify-between text-sm text-gray-500 mt-1">
-                    <span>1-30 days</span>
-                    <span>31-60 days</span>git 
-                    <span>61-90 days</span>
-                </div>
-                <h4 class="text-sm py-4 px-4 text-center">Upcoming</h4>
-            </div>
-
-
-            </div> -->
         </div>
     </div>
+
+    <script>
+    const ctx = document.getElementById('paymentChart').getContext('2d');
+
+    const upcomingData = [90, 90, 60];
+    const paidData = [30, 70, 50];
+
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['1-30 days', '31-60 days', '61-90 days'],
+            datasets: [{
+                label: 'Payment Amount',
+                data: upcomingData,
+                backgroundColor: '#6B21A8',
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 20
+                    }
+                }
+            }
+        }
+    });
+
+    document.getElementById('btnUpcoming').addEventListener('click', function() {
+        chart.data.datasets[0].data = upcomingData;
+        chart.update();
+    });
+
+    document.getElementById('btnPaid').addEventListener('click', function() {
+        chart.data.datasets[0].data = paidData;
+        chart.update();
+    });
+    </script>
+</body>
+
+</html>
 </body>
 
 </html>
